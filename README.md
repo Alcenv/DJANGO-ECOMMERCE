@@ -17,12 +17,14 @@ python manage.py startapp ecommerceapp
  ```shell  
 python manage.py startapp auth
 ```
-##Creació del superusuario
+
+## Creació del superusuario
 Para crear el superusuario en la base de datos Django, utiliza el siguiente comando:
  ```shell  
 python manage.py createsuperuser
 ```
-##Instalación de dependencias
+
+## Instalación de dependencias
 Asegúrate de tener las siguientes dependencias instaladas:
 - Six (biblioteca de compatibilidad entre Python 2 y 3):
  ```shell  
@@ -32,7 +34,8 @@ pip install six
  ```shell  
 pip install Pillow
 ```
-##Ejecución del proyecto
+
+## Ejecución del proyecto
 Para inicializar el proyecto, ejecuta el siguiente comando:
  ```shell  
 python manage.py runserver
