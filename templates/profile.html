@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}Perfil{% endblock title %}
+{% block content %}
+<h3>Mi <strong>Perfil</strong></h3>
+<a href="#portfolio" class="btn-get-started scrollto">Ver Perfil</a>
+{% endblock content %}
+{% block body %}
+<section id="portfolio" class="portfolio">
+    <div class="container">
+<h1>Mi Perfil</h1>
+
+<table class="table table-info table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Productos</th>
+        <th scope="col">Cantidad Pagada</th>
+        <th scope="col">Estado de Pago</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Número de Télefono</th>
+        <th scope="col">Estado del envío</th>
+        <th scope="col">Entregado</th>
+        <th scope="col">Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for i  in items %}
+
+        <tr>
+            <th scope="row">{{i.oid}} </th>
+            <td> {{i.name}}</td>
+            <td>{{i.items_json}} </td>
+            <td>{{i.amount}} </td>
+            <td> {{i.paymentstatus}}</td>
+            <td> {{i.address1}}</td>
+            <td> {{i.phone}}</td>
+
+            {% for j in status  %}
+            <td> {{j.update_desc}}</td>
+
+            {% if j.delivered %}
+            <td><i class="fa-solid fa-circle-check"></i> Entregado</td>
+            {% else %}
+            <td> <i class="fa-solid fa-truck"></i> No Entregado</td>
+            {% endif %}
+
+            <td> {{j.timestamp}}</td>
+            {% endfor %}
+  
+        {% endfor %}
+        
+    </tbody>
+</table>
+    </div>
+</section>
+{% endblock body %}

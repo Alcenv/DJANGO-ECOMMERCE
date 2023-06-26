@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>
+    {% block title %}Ecommerse{% endblock title %}
+  </title>
+  <meta content="sitio web de comercio electrónico entregamos los mejores productos del mercado" name="description">
+  <meta content="Dispositivos electrónicos" name="amazon,flipkart,selling,products">
+
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static '/assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/remixicon/remixicon.css'%}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Template Main CSS File -->
+  <link href="{% static '/assets/css/style.css'%}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="/" class="logo"><img src="{% static 'images/logo.png' %}"alt="" class="img-fluid">ElectroStore</a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">Inicio</a></li>
+          <li><a class="nav-link scrollto" href="/checkout">Pagar</a></li>
+          <li><a class="nav-link scrollto" href="/profile"><i class="fas fa-user"></i> Mi Perfil</a></li>
+          <li>
+          <button type="button" class="nav-link scrollto bg-danger p-2 m-2 text-white" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" ><i class="fa-solid fa-cart-shopping"></i>  Carrito (<span id="cart">0</span>)</button>
+          </li>
+          {% if request.user.is_authenticated %}
+          <li><a class="nav-link scrollto" href="/auth/logout/"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión </a></li>
+          {% else %}
+          <li class="dropdown"><a href="#"><span><i class="fa-solid fa-user"></i> Inicio de Sesión</span> <i class="bi bi-chevron-down"></i></a>
+
+            <ul>
+              <li><a href="/auth/signup/">Registrarse</a></li>
+              <li><a href="/auth/login">Iniciar Sesión</a></li>
+            </ul>
+          </li>
+          {% endif %}
+          <li><a class="nav-link scrollto bg-dark p-2 m-2" href="/contact"><i class="fas fa-envelope"></i> Contáctanos</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <!-- <h3>Bienvenido a <strong>ElectroStore</strong></h3>
+      <h1>Innovación electrónica a solo un clic</h1>
+      <h2>Tu tienda online de confianza para dispositivos electrónicos de calidad</h2>
+      <a href="#portafolio" class="btn-get-started scrollto">Comprar</a> -->
+
+      {% block content %}
+      
+      
+      
+      {% endblock content %}
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    {% block body %}
+    
+    
+
+    {% endblock body %}
+
+ 
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Presentado por:</h3>
+            <p>
+              Omar Alejandro Cendales Vidal<br>
+              Ingeniero de Sistemas<br>
+              Colombia<br><br>
+              <strong>Email:</strong> omalejo221@gmail.com<br>
+              <strong>Email 2:</strong> alcen2211@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Sobre mí</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://github.com/Alcenv" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.linkedin.com/in/alejandro-cendales-144271228/" target="_blank"><i class="fa-brands fa-linkedin"></i>Linkedin</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://scholar.google.com/citations?user=yaTatUYAAAAJ&hl=es" target="_blank"><i class="fa-sharp fa-solid fa-graduation-cap"></i>Google Scholar</a></li>
+            </ul>
+          </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Alejandro Cendales</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          Designed by <a href="https://github.com/Alcenv" target="_blank" ><i class="fa-brands fa-github"></i>GitHub</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="https://www.linkedin.com/in/alejandro-cendales-144271228/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.instagram.com/alejandrov2211_/" class="instagram"><i class="bx bxl-instagram"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static '/assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+  <script src="{% static '/assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+  <script src="{% static '/assets/vendor/swiper/swiper-bundle.min.js'%}"></script>
+  <script src="{% static '/assets/vendor/php-email-form/validate.js'%}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static '/assets/js/main.js'%}"></script>
+
+</body>
+
+</html>

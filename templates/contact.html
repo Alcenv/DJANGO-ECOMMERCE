@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}Contáctenos{% endblock title %}
+{% block content %}
+<h1>Ponte en contacto con nosotros</h1>
+<a href="#main" class="btn-get-started scrollto">Contactar Ahora</a>
+{% endblock content %}
+{% block body %}
+<h1 class="text-center">Contacta con nosotros</h1>
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            <form action="/contact" method="post">
+              {% csrf_token %}
+              <br />
+          
+              <label for="name">Nombre Completo</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control p-2"
+                  id="name"
+                  name="name"
+                  required
+                />
+              </div>
+              <label for="email">Email</label>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control p-2"
+                  id="email"
+                  name="email"
+                  value="{{user.email}}"
+                  required
+                />
+              </div>
+              <label for="desc">¿En qué podemos ayudarte?</label>
+              <div class="form-group">
+                <textarea
+                  type="text"
+                  class="form-control p-2"
+                  id="desc"
+                  name="desc"
+                  required> </textarea>
+              </div>
+              <label for="pnumber">Número de Teléfono</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control p-2"
+                  id="pnumber"
+                  name="pnumber"
+                  required
+                />
+              </div>
+              <br />
+              <button type="submit" class="btn btn-dark">Enviar</button>
+          
+              <br />
+              <br />
+              <br />
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+{% endblock body %}
