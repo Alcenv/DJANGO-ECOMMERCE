@@ -2,7 +2,7 @@
 Proyecto Ecommerce con DJANGO y Paytm (método de pago)
 
 1. Tener instalado Django:
-   
+'''shell   
 pip install django
 
 3. Crear proyecto de Django (Crea una estructura de directorios y archivos iniciales para el proyecto) en este con el nombre "ecommerce":
